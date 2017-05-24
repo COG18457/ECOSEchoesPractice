@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" ng-app="teamEcosClaimsApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Claim Search App</title>
+    <link rel="stylesheet" href="BootStrap/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="angular.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="controllers.js"></script>
+</head>
+
+<body ng-controller="ClaimSearchCtrl" >
+
+    <div class="paneldivider">&nbsp;</div>
+
+    <div  id="S1" class="searchresult">
+        <table id="claims" ng-hide="!claims.length" style="height: 29px;" width="523" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr class="required" bgcolor="#e8f4f8">
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="inputValue" style="width: 302px; ">EventNumber</td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="inputValue" style="width: 166px; ">Policynumber</td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="inputValue" style="width: 179px; ">ClaimDescription</td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                         <td class="inputValue" style="width: 167px; ">LossDate</td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+
+
+                    <td class="inputValue" style="width: 171px; ">LOB</td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="inputValue">ClaimDetails</td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                </tr>                <!--Body content-->
+                <tr ng-repeat="claim in claims" >
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="inputValue" style="width: 302px; "> <a  href="#showClaim">{{claim.eventNumber}}</a></td>
+                    <!--<td class="inputValue"> <button id="eventnum" ng-model="eventnum" ng-click="viewclaim()" value={{claim.eventNumber}}>{{claim.eventNumber}}</button></td>-->
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                      <td class="inputValue" > {{claim.policyNumber}}</td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                      <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                        <td class="inputValue" style="width: 142px; ">{{claim.claimDescription}}</td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                      <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                       <td class="inputValue" style="width: 302px; ">{{claim.lossDate}}</td>
+                       <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                            <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                            <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                            <td class="inputValue" style="width: 100px; ">{{claim.lobCode}}</td>
+                                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        </td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+    </body>
+    </html>

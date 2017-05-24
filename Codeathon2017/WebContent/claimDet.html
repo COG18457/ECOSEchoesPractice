@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" ng-app="teamEcosClaimsApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Claim Details</title>
+    <link rel="stylesheet" href="BootStrap/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="angular.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="controllers.js"></script>
+<div class="paneldivider">&nbsp;</div>
+<div id="s" class="searchPanel">
+  <p> <a href="#back">Back</a>
+  </head>
+
+  <body >
+ <body ng-controller="ClaimDetCtrl">
+    <div class="paneldivider">&nbsp;</div>
+    <div id="s" class="claimresult">
+
+    </div>
+    <div class="paneldivider">&nbsp;</div>
+   <!--<p>{{exposures}}</p>-->
+    <!-- <a href='"#test"+{{claimdetail.PolicyNumber}}'>Test</a>-->
+    <div id="S1" class="clresult">
+        <table id="claimdetail" style="height: 29px;" width="523" cellspacing="0" cellpadding="0">
+            <tbody bgcolor="#e8f4f8">
+                <tr  class="required">
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                      <td class="inputValue">PolicyNumber</td>
+                      <td class="inputValue">{{claimdetail.policyNumber}}</td>
+                      </tr>
+                      <tr>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                     <td class="inputValue">PolicyEffective Date</td>
+                    <td class="inputValue">{{claimdetail.policyEffDate}}</td>
+                    </tr>
+                    <tr>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="inputValue">Expiration Date</td>
+                    <td class="inputValue">{{claimdetail.policyExpDate}}</td>
+                    </tr>
+                    <tr>
+                     <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                         <td class="inputValue">LOB</td>
+                         <td class="inputValue">{{claimdetail.lobCode}}</td>
+                         </tr>
+
+
+
+            </tbody>
+        </table>
+        <table  style="height: 29px;" width="523" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr class="required">
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                </tr>
+            <tr class="required">
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+            </tr>
+            <tr class="required">
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+            </tr>
+            </tbody>
+            </table>
+
+        <table id="exposures" style="height: 29px;" width="523" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr class="required" bgcolor="#e8f4f8">
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="inputValue" style="width: 302px; ">CCPSNumber</td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="inputValue" style="width: 166px; ">Status</td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="inputValue" style="width: 179px; ">ExposureType</td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="inputValue" style="width: 179px; ">Payment</td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="inputValue" style="width: 179px; ">Claimant</td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="inputValue" style="width: 179px; ">Handler</td>
+            </tr>
+            <tr class="required" ng-repeat="e in exposures">
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="inputValue" style="width: 302px; ">{{e.claimNumber}}</td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="inputValue" style="width: 166px; ">{{e.claimStatus}}</td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="inputValue" style="width: 179px; ">{{e.claimType}}</td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="inputValue" style="width: 179px; ">{{e.amountPaid}}</td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="inputValue" style="width: 179px; ">{{e.claimantName}}</td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                <td class="inputValue" style="width: 179px; ">{{e.handlerDetais.claimHandlerName}}</td>
+            </tr>
+            </tbody>
+            </table>
+    </div>
+
+</body>
+
+</html>
+</body>
+</html>

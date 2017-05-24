@@ -1,0 +1,30 @@
+<html lang="en-US">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/ngDatepicker.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment-with-locales.min.js"></script>
+<script src="/js/ngDatepicker.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+  <h2 class="text-center">Angularjs Simple Datepicker directive example code with Demo
+</h2>
+
+  <div>
+      <ng-datepicker  ng-model="ctrl.date2" view-format="DD-MM-YYYY">
+      </ng-datepicker>
+  </div>
+
+</div>
+
+<script>
+  var app = angular.module('myApp', ['jkuri.datepicker']);
+  app.controller('customersCtrl', function($scope, $http) { 
+  });
+</script>
+
+</body>
+</html> 

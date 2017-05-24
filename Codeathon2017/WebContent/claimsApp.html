@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" ng-app="teamEcosClaimsApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Claim Search App</title>
+    <link rel="stylesheet" href="BootStrap/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="angular.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="controllers.js"></script>
+</head>
+
+<body ng-controller="teamEcosClaimCtrl" ng-init="init()" ng-enter="search()">
+
+    <div class="paneldivider">&nbsp;</div>
+    <div id="s" ng-hide="flag" class="searchPanel">
+        <table id="searchtable" class="dv_search ">
+            <tbody>
+                <tr>
+                    <td valign="top">
+                        <table id="searchtable:2" class="dvColumn" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr class="required">
+                                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                                    <td class="inputLabel">Search By</td>
+                                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                                    <td class="inputValue">
+                                        <select ng-model="searchprop" ng-change="searchval()">
+                                            <option value="policyNumber">policyNumber</option>
+                                            <option value="claimNumber">ClaimNumber</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="required">
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputLabel">&nbsp;</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputValue">&nbsp;</td>
+                                </tr>
+                                <tr id="pl" ng-hide="pol">
+                                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                                    <td class="inputLabel">PolicyNumber #</td>
+                                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                                    <td class="inputValue">
+                                        <input ng-model="policynum" class="textBox" style="text-align: left;" contenteditable="true" maxlength="20" size="30" ng-change="change()" type="text" value="" />
+                                    </td>
+                                </tr>
+                                <tr class="required">
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputLabel">&nbsp;</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputValue">&nbsp;</td>
+                                </tr>
+                                <tr id="cl" ng-hide="clm">
+                                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                                    <td class="inputLabel">ClaimNumber #</td>
+                                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                                    <td class="inputValue">
+                                        <input ng-model="claimnum" class="textBox" style="text-align: left;" contenteditable="true" maxlength="20" size="30" ng-change="setclaim()" type="text" value="" />
+                                    </td>
+                                </tr>
+
+                                <tr class="required">
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputLabel">&nbsp;</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputValue">&nbsp;</td>
+                                </tr>
+                                <tr id="efdt" class="required" ng-hide="pol">
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputLabel">Effective date#</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputValue"><input type="date" ng-model="dateObject"  ng-change="seteffdate()"></td>
+                                </tr>
+
+                                <tr class="required">
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputLabel">&nbsp;</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputValue">&nbsp;</td>
+                                </tr>
+
+                                <tr id="exdt" class="required" ng-hide="pol">
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputLabel">Expiration date#</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputValue"><input type="date"  ng-model="expdateObject"  ng-change="setexpdate()"></td>
+                                </tr>
+                                <tr class="required">
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputLabel">&nbsp;</td>
+                                    <td class="empty-cell">&nbsp;</td>
+                                    <td class="inputValue">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                                    <td class="empty-cell"><img src="images/trans_pixel.gif" alt="" width="1px" height="1px" border="0" /></td>
+                                    <td class="inputLabel">
+                                        <!--<button ng-click="search()">Click me!</button>-->
+                                        <a href="#search">Search</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="paneldivider">&nbsp;</div>
+    <div ng-view></div>
+
+
+
+</body>
+
+</html>
